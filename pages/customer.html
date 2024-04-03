@@ -8,10 +8,96 @@
 
     <style>
 
+        nav {
+            background-color: yellow;
+        }
+
+        .navbar-nav a {
+            color: green;
+        }
+
+        #content{
+            position: relative;
+            background-color: lightblue;
+            width: 100vw;
+        }
+
+        .cus-card {
+            margin: 10px;
+        }
+
     </style>
 
 </head>
 <body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg  custom-navbar " >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">MH Grocery Stores</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Orders</a>
+                        <a class="nav-link" href="#">Items</a>
+                        <a class="nav-link" href="#">Customers</a>
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </div>
+                </div>
+
+                <nav class="navbar ">
+                    <form class="container-fluid justify-content-start">
+                        <button class="btn btn-outline-success me-2" type="button">Main button</button>
+                        <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+                    </form>
+                </nav>
+            </div>
+        </nav>
+
+    </header>
+
+    <section id="content" class="container">
+
+        <div class="card cus-card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4"  >
+            <div class="card-body">
+                <h5 class="card-title">New Customer</h5>
+
+                <form>
+
+                    <div class="mb-3">
+                        <label for="cus-id" class="form-label">Customer ID</label>
+                        <input type="text" class="form-control" id="cus-id" placeholder="Enter customer's mobile number">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cus-name" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="cus-name" placeholder="Enter customer's name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cus-email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="cus-email" aria-describedby="emailHelp" placeholder="Enter customer's email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cus-address" class="form-label">Customer Address</label>
+                        <textarea class="form-control" placeholder="Enter customer's address" id="cus-address" style="height: 100px"></textarea>
+                    </div>
+                </form>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-warning">Save</button>
+                    <button type="button" class="btn btn-primary">Clear</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
 
 
 
