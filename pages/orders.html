@@ -77,7 +77,7 @@
 <section id="content" class="container">
 
     <div class="row">
-        <div class="card cus-card col-10 col-sm-10  col-md-5 col-lg-5 col-xl-5 col-xxl-5"  >
+        <div class="card cus-card col-10 col-sm-10  col-md-4 col-lg-4 col-xl-4 col-xxl-4"  >
 
             <h5 class="card-header">Invoice Details</h5>
 
@@ -122,7 +122,7 @@
             </div>
         </div>
 
-        <div id="div-search" class="card cus-card col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4 col-xxl-4" >
+        <div id="div-item" class="card cus-card col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3 col-xxl-3" >
 
             <h5 class="card-header">Item Select</h5>
 
@@ -156,7 +156,56 @@
                     </div>
 
                     <div class="col-12 text-end">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Add item</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div id="div-amount" class="card cus-card col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4 col-xxl-4" >
+
+            <h5 class="card-header">Transaction</h5>
+
+            <div class="card-body">
+
+                <form class="row g-3">
+
+                    <div class="row g-3 align-items-center ">
+                        <div class="col-auto">
+                            <label for="total" class="col-form-label text-primary ">Total</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" id="total" class="form-control border border-primary" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+
+                    <div class="row g-3 align-items-center ">
+                        <div class="col-auto">
+                            <label for="subtotal" class="col-form-label text-warning">Net</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" id="subtotal" class="form-control border border-warning text-warning" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <label for="cash" class="form-label">Cash</label>
+                        <input type="text" class="form-control" id="cash">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="discount" class="form-label">Discount</label>
+                        <input type="text" class="form-control" id="discount">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="balance" class="form-label">Qty on hand</label>
+                        <input type="text" class="form-control" id="balance">
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <button type="button" class="btn btn-primary">Purchase</button>
                     </div>
                 </form>
 
@@ -165,37 +214,28 @@
 
         <div id="div-cus-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
 
-            <h5 class="card-header">Customers</h5>
+            <h5 class="card-header">Items</h5>
 
             <div class="card-body">
                 <section class="table-view">
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email address</th>
-                            <th scope="col">Address</th>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Item Price</th>
+                            <th scope="col">Item Total</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <th>1</th>
-                            <td>Mark</td>
-                            <td>Mark@gmail.com</td>
-                            <td>London</td>
+
                         </tr>
                         <tr>
-                            <th>2</th>
-                            <td>Jacob</td>
-                            <td>Jacob@gmail.com</td>
-                            <td>Los Angeles</td>
+
                         </tr>
                         <tr>
-                            <th>3</th>
-                            <td>Larry</td>
-                            <td>Larry@gmail.com</td>
-                            <td>Pearth</td>
+
                         </tr>
                         </tbody>
                     </table>
