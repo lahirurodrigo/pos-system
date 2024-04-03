@@ -45,11 +45,17 @@
       }
 
       .cus-card {
-          margin-top: 1rem;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          background-color: rgba(173, 216, 230, 0.5);
       }
 
       .cus-card-header {
-          background-color: cyan;
+          background-color: lightgreen;
+      }
+
+      .cus-card-progress-header {
+          background-color: lightgreen;
       }
 
   </style>
@@ -153,18 +159,18 @@
                 <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 col-xxl-2" >
                     <div class="card cus-card">
 
-                        <h5 class="card-header cus-card-header">Items and Customers</h5>
+                        <h5 class="card-header cus-card-header">Lists</h5>
 
                         <div class="card-body">
 
                             <form class="row g-3">
 
-                                <div class="col-12 text-end">
-                                    <button type="submit" class="btn btn-primary">All Customers</button>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-outline-primary">Customers</button>
                                 </div>
 
-                                <div class="col-12 text-end">
-                                    <button type="submit" class="btn btn-primary">Get all Items</button>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-outline-success">Items</button>
                                 </div>
 
                             </form>
@@ -173,10 +179,11 @@
                     </div>
                 </div>
 
+
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
                     <div class="card card-progress cus-card">
 
-                        <h5 class="card-header cus-card-header">Sales by Month</h5>
+                        <h5 class="card-header cus-card-progress-header">Sales by Month</h5>
 
                     <div class="card-body">
                         <div class="progress-bars">
