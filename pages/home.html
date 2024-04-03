@@ -44,6 +44,10 @@
 
       }
 
+      .cus-card {
+          margin-top: 1rem;
+      }
+
       .cus-card-header {
           background-color: cyan;
       }
@@ -56,7 +60,7 @@
 
     <section id="home">
 
-            <header>
+        <header>
                 <nav class="navbar navbar-expand-lg  custom-navbar " >
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">MH Grocery Stores</a>
@@ -87,49 +91,107 @@
 
             <div class="row" >
 
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4" >B</div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3" >
+                    <div class="card cus-card">
+
+                        <h5 class="card-header cus-card-header">Order History</h5>
+
+                        <div class="card-body">
+
+                            <form class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label for="input-year" class="form-label">Select Year</label>
+                                    <select id="input-year" class="form-select">
+                                        <option selected></option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-primary">View Orders</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3" >
+                    <div class="card cus-card">
+
+                        <h5 class="card-header cus-card-header">Order History by Customer</h5>
+
+                        <div class="card-body">
+
+                            <form class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label for="input-cus-type" class="form-label">Search by</label>
+                                    <select id="input-cus-type" class="form-select">
+                                        <option selected></option>
+                                        <option>ID</option>
+                                        <option>Name</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="cus-name" class="form-label">Name or ID</label>
+                                    <input type="text" class="form-control" id="cus-name">
+                                </div>
+
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-primary">View History</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4" >C</div>
 
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
-                <div class="card card-progress">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+                    <div class="card card-progress cus-card">
 
-                    <h5 class="card-header cus-card-header">Sales by Month</h5>
+                        <h5 class="card-header cus-card-header">Sales by Month</h5>
 
-                <div class="card-body">
-                    <div class="progress-bars">
-                        <label for="jan">January</label>
-                        <div id="jan" class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div  class="progress-bar bg-success" style="width: 25%">25%</div>
+                    <div class="card-body">
+                        <div class="progress-bars">
+                            <label for="jan">January</label>
+                            <div id="jan" class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div  class="progress-bar bg-success" style="width: 25%">25%</div>
+                            </div>
+
+                            <br>
+
+
+                            <label for="feb">February</label>
+                            <div id="feb" class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-info text-dark" style="width: 50%">50%</div>
+                            </div>
+
+                            <br>
+
+                            <label for="mar">March</label>
+                            <div id="mar" class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-warning text-dark" style="width: 75%">75%</div>
+                            </div>
+
+                            <br>
+
+                            <label for="apr">April</label>
+                            <div id="apr" class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-danger" style="width: 100%">100%</div>
+                            </div>
+
+                            <br>
+
                         </div>
-
-                        <br>
-
-
-                        <label for="feb">February</label>
-                        <div id="feb" class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-info text-dark" style="width: 50%">50%</div>
-                        </div>
-
-                        <br>
-
-                        <label for="mar">March</label>
-                        <div id="mar" class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-warning text-dark" style="width: 75%">75%</div>
-                        </div>
-
-                        <br>
-
-                        <label for="apr">April</label>
-                        <div id="apr" class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-danger" style="width: 100%">100%</div>
-                        </div>
-
-                        <br>
-
+                        <a href="orders.html" class="card-link">Go to orders</a>
                     </div>
-                    <a href="orders.html" class="card-link">Go to orders</a>
                 </div>
-            </div>
             </div>
 
             </div>
