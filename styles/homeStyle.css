@@ -1,0 +1,53 @@
+#home {
+    /*width: 100vw;
+    height: 100vh;*/
+
+    position: relative;
+}
+
+.logo-name {
+    color: #465E90;
+}
+
+nav {
+    background-color: #e4ffe5;
+}
+
+header {
+    position: fixed;
+    width: 100vw ;
+    z-index: 1000;
+}
+
+.navbar-nav a {
+    color: #4281A9;
+}
+
+.home-content {
+
+    position: absolute;
+
+    top: 5rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+}
+
+.card-progress {
+
+}
+
+.cus-card {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    background-color: rgba(173, 216, 230, 0.5);
+}
+
+.cus-card-header {
+    background-color: lightgreen;
+}
+
+.cus-card-progress-header {
+    background-color: lightgreen;
+}

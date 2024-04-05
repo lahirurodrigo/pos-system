@@ -1,0 +1,40 @@
+nav {
+    background-color: #e4ffe5;
+}
+
+.logo-name {
+    color: #465E90;
+}
+
+header {
+    position: fixed;
+    width: 100vw ;
+    z-index: 1000;
+}
+
+.navbar-nav a {
+    color: #4281A9;
+}
+
+#content{
+    position: absolute;
+
+    top: 5rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.cus-card {
+    margin: 10px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#div-search {
+    height: fit-content;
+}
+
+.card-header {
+    background-color: lightgreen;
+}
