@@ -15,8 +15,12 @@
           position: relative;
       }
 
+      .logo-name {
+          color: #3a18ff;
+      }
+
       nav {
-          background-color: yellow;
+          background-color: #e4ffe5;
       }
 
      header {
@@ -69,7 +73,7 @@
         <header>
                 <nav class="navbar navbar-expand-lg  custom-navbar " >
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">MH Grocery Stores</a>
+                        <a class="navbar-brand logo-name" href="#">MH Grocery Stores</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -116,7 +120,7 @@
                                 </div>
 
                                 <div class="col-12 text-end">
-                                    <button type="submit" class="btn btn-primary">View Orders</button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View Orders</button>
                                 </div>
                             </form>
 
@@ -166,7 +170,7 @@
                             <form class="row g-3">
 
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-outline-primary">Customers</button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customerList">Customers</button>
                                 </div>
 
                                 <div class="col-12 text-center">
@@ -228,7 +232,118 @@
 
     </section>
 
+    <!-- Modal for View orders -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Order History</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="div-ord-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
 
+                        <h5 class="card-header">Items</h5>
+
+                        <div class="card-body">
+                            <section class="table-view">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Order ID</th>
+                                        <th scope="col">Customer ID</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Amount</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>O1</th>
+                                        <td>C1</td>
+                                        <td>2024/03/02</td>
+                                        <td>10000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>O2</th>
+                                        <td>C2</td>
+                                        <td>2024/03/27</td>
+                                        <td>20000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>O3</th>
+                                        <td>C3</td>
+                                        <td>2024/03/30</td>
+                                        <td>20000</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for Customer list-->
+    <div class="modal fade" id="customerList" tabindex="-1" aria-labelledby="customer-list" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="customer-list">Customer List</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="div-cus-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+
+                        <h5 class="card-header">Items</h5>
+
+                        <div class="card-body">
+                            <section class="table-view">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Customer ID</th>
+                                        <th scope="col">Customer Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Address</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>C1</th>
+                                        <td>Dimuthu</td>
+                                        <td>dimuthu@gmail.com</td>
+                                        <td>Wadduwa</td>
+                                    </tr>
+                                    <tr>
+                                        <th>C2</th>
+                                        <td>Dilan</td>
+                                        <td>dilan@gmail.com</td>
+                                        <td>Moratuwa</td>
+                                    </tr>
+                                    <tr>
+                                        <th>C3</th>
+                                        <td>Pasindu</td>
+                                        <td>pasindu@gmail.com</td>
+                                        <td>Dompe</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
