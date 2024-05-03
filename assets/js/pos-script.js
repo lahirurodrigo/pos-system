@@ -39,3 +39,12 @@ $("#orders-link").eq(0).on('click', () => {
     $('#customer-content').css({display: 'none'});
     $('#home-content').css({display: 'none'});
 });
+
+$("#home-link").eq(0).on('click', () => {
+    replaceStyleSheet('../styles/ordersStyle.css');
+    $('#home-content').css({display: 'block'});
+    $('#order-content').css({display: 'none'});
+    $('#item-content').css({display: 'none'});
+    $('#customer-content').css({display: 'none'});
+
+});
