@@ -3,6 +3,7 @@ body {
     overflow: hidden;
 }
 
+/*
 #login {
     width: 100vw;
     height: 100vh;
@@ -14,6 +15,7 @@ body {
     position: relative;
 
 }
+*/
 
 #loginForm {
 
@@ -43,12 +45,12 @@ body {
     height: 4rem;
 }
 
-#loginIcon {
+/*#loginIcon {
 
     height: 4rem;
     width: 4rem;
 
-    background-image: url("assets/images/login.png");
+    background-image: url("../assets/images/login.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -59,7 +61,7 @@ body {
     right: 0;
     margin: auto;
 
-}
+}*/
 
 #btnWrap {
     position: relative;
