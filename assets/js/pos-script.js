@@ -12,10 +12,19 @@ $("#login-button").eq(0).on('click', () => {
     $('#home').css({display: 'block'});
     $('#login').css({display: 'none'});
     $('#customer-content').css({display: 'none'});
+    $('#item-content').css({display: 'none'});
 });
 
 $("#customer-link").eq(0).on('click', () => {
     replaceStyleSheet('../styles/customerStyle.css');
     $('#customer-content').css({display: 'block'});
+    $('#home-content').css({display: 'none'});
+    $('#item-content').css({display: 'none'});
+});
+
+$("#item-link").eq(0).on('click', () => {
+    replaceStyleSheet('../styles/itemStyle.css');
+    $('#item-content').css({display: 'block'});
+    $('#customer-content').css({display: 'none'});
     $('#home-content').css({display: 'none'});
 });

@@ -436,6 +436,115 @@
     </section>
 
 
+    <!-- Item page -->
+    <section id="item-content" class="container">
+
+        <div class="row">
+            <div class="card cus-card col-10 col-sm-10   col-md-6 col-lg-6 col-xl-6 col-xxl-6"  >
+
+                <h5 class="card-header">New Item</h5>
+
+                <div class="card-body">
+                    <h5 class="card-title">Item info</h5>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label for="item-id" class="form-label">Item code</label>
+                            <input type="text" class="form-control" id="item-id" placeholder="Enter item code">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="item-name" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="item-name" placeholder="Enter item name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="item-uni-price" class="form-label">Unit price</label>
+                            <input type="text" class="form-control" id="item-uni-price" placeholder="Enter unit price">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="item-qty" class="form-label">Quantity</label>
+                            <input type="text" class="form-control" id="item-qty" placeholder="Enter quantity">
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-warning">Save</button>
+                            <button type="button" class="btn btn-primary">Clear</button>
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+
+            <div id="div-item-search" class="card cus-card col-10 col-sm-10 col-md-6 col-lg-4 col-xl-4 col-xxl-4" >
+
+                <h5 class="card-header">Item Details</h5>
+
+                <div class="card-body">
+                    <h5 class="card-title">Search Item</h5>
+
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="item-id-search" placeholder="Enter item code/name">
+                        </div>
+
+                        <div class="text-end">
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#itemModal">Search</button>
+                            <button type="button" class="btn btn-primary">clear</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div id="div-item-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+
+                <h5 class="card-header">Items</h5>
+
+                <div class="card-body">
+                    <section class="table-view">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Unit price</th>
+                                <th scope="col">Quantity</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Rice</td>
+                                <td>200</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>Soap</td>
+                                <td>150</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>Biscuits</td>
+                                <td>140</td>
+                                <td>200</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
 
     <!-- Modals -->
 
@@ -605,7 +714,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="div-item-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+                    <div id="div-home-item-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
 
                         <h5 class="card-header">Items</h5>
 
@@ -653,14 +762,14 @@
     </div>
 
 
-    <!-- modals for customer page -->
+    <!-- Modals for customer page -->
 
     <!-- Modal for Search customer-->
-    <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="customerModal-label">Customer Details</h1>
+                    <h1 class="modal-title fs-5" id="customerModalLabel">Customer Details</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -693,6 +802,67 @@
                                     <div class="mb-3">
                                         <label for="customer-address" class="form-label">Customer Address</label>
                                         <textarea class="form-control" placeholder="Customer's address" id="cus-address-search-modal" style="height: 100px"></textarea>
+                                    </div>
+                                </form>
+
+                                <div class="text-end">
+                                    <button type="button" class="btn btn-primary">Update</button>
+                                    <button type="button" class="btn btn-primary">Delete</button>
+                                    <button type="button" class="btn btn-primary">Clear</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modals for item page -->
+
+    <!-- Modal for Search Item-->
+    <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="itemModalLabel">Item Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <section>
+
+                        <div class="card cus-card"  >
+
+                            <h5 class="card-header">Item</h5>
+
+                            <div class="card-body">
+                                <h5 class="card-title">Item info</h5>
+
+                                <form>
+
+                                    <div class="mb-3">
+                                        <label for="itm-code-search-modal" class="form-label">Code</label>
+                                        <input type="text" class="form-control" id="itm-code-search-modal" placeholder="Item code">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="itm-name-search-modal" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="itm-name-search-modal" placeholder="Name">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="itm-uni-price-search-modal" class="form-label">Unit Price</label>
+                                        <input type="text" class="form-control" id="itm-uni-price-search-modal" placeholder="Unit price">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="itm-qty-search-modal" class="form-label">Quantity</label>
+                                        <input type="text" class="form-control" id="itm-qty-search-modal" placeholder="Quantity">
                                     </div>
                                 </form>
 
