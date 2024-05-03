@@ -545,6 +545,172 @@
 
     </section>
 
+    <!-- Orders page -->
+
+    <section id="order-content" class="container">
+
+        <div class="row">
+            <div class="card cus-card col-10 col-sm-10  col-md-4 col-lg-4 col-xl-4 col-xxl-4"  >
+
+                <h5 class="card-header">Invoice Details</h5>
+
+                <div class="card-body">
+
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="order-id" class="form-label">Order ID</label>
+                            <input type="text" class="form-control" id="order-id">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="datepicker" class="form-label">Select Date:</label>
+                                <input type="date" class="form-control datepicker" id="datepicker" placeholder="Select date">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="input-cus-id" class="form-label">Customer ID</label>
+                            <select id="input-cus-id" class="form-select">
+                                <option selected></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="order-cus-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="order-cus-name">
+                        </div>
+                        <div class="col-6">
+                            <label for="order-cus-address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="order-cus-address" >
+                        </div>
+                        <div class="col-md-6">
+                            <label for="order-cus-email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="order-cus-email">
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <div id="div-item" class="card cus-card col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3 col-xxl-3" >
+
+                <h5 class="card-header">Item Select</h5>
+
+                <div class="card-body">
+
+                    <form class="row g-3">
+
+                        <div class="col-md-6">
+                            <label for="input-item-code" class="form-label">Customer ID</label>
+                            <select id="input-item-code" class="form-select">
+                                <option selected></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="order-itm-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="order-itm-name">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="order-itm-price" class="form-label">Price</label>
+                            <input type="text" class="form-control" id="order-itm-price">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="itm-qty" class="form-label">Qty on hand</label>
+                            <input type="text" class="form-control" id="itm-qty">
+                        </div>
+
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-primary">Add item</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div id="div-amount" class="card cus-card col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4 col-xxl-4" >
+
+                <h5 class="card-header">Transaction</h5>
+
+                <div class="card-body">
+
+                    <form class="row g-3">
+
+                        <div class="row g-3 align-items-center ">
+                            <div class="col-auto">
+                                <label for="total" class="col-form-label text-primary ">Total</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" id="total" class="form-control border border-primary" aria-describedby="passwordHelpInline">
+                            </div>
+                        </div>
+
+                        <div class="row g-3 align-items-center ">
+                            <div class="col-auto">
+                                <label for="subtotal" class="col-form-label text-danger">Subtotal</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="subtotal" class="form-control border border-danger text-danger" aria-describedby="passwordHelpInline">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="cash" class="form-label">Cash</label>
+                            <input type="text" class="form-control" id="cash">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="discount" class="form-label">Discount</label>
+                            <input type="text" class="form-control" id="discount">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="balance" class="form-label">Qty on hand</label>
+                            <input type="text" class="form-control" id="balance">
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn btn-primary">Purchase</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div id="div-order-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+
+                <h5 class="card-header">Items</h5>
+
+                <div class="card-body">
+                    <section class="table-view">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">Item Code</th>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">Item Price</th>
+                                <th scope="col">Item Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- Modals -->
 
