@@ -1,9 +1,9 @@
-nav {
-    background-color: #e4ffe5;
-}
-
 .logo-name {
     color: #465E90;
+}
+
+nav {
+    background-color: #e4ffe5;
 }
 
 header {
@@ -16,7 +16,7 @@ header {
     color: #4281A9;
 }
 
-#content{
+#customer-content{
     position: absolute;
 
     top: 5rem;

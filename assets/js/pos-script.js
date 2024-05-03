@@ -11,4 +11,11 @@ $("#login-button").eq(0).on('click', () => {
     replaceStyleSheet('../styles/homeStyle.css');
     $('#home').css({display: 'block'});
     $('#login').css({display: 'none'});
+    $('#customer-content').css({display: 'none'});
+});
+
+$("#customer-link").eq(0).on('click', () => {
+    replaceStyleSheet('../styles/customerStyle.css');
+    $('#customer-content').css({display: 'block'});
+    $('#home-content').css({display: 'none'});
 });

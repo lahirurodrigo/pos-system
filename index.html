@@ -173,10 +173,10 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            <a class="nav-link" href="orders.html">Orders</a>
-                            <a class="nav-link" href="item.html">Items</a>
-                            <a class="nav-link" href="customer.html">Customers</a>
+                            <a id="home-link" class="nav-link active" >Home</a>
+                            <a id="orders-link" class="nav-link">Orders</a>
+                            <a id="item-link" class="nav-link">Items</a>
+                            <a id="customer-link" class="nav-link">Customers</a>
                         </div>
                     </div>
 
@@ -190,7 +190,7 @@
 
         </header>
 
-        <section class="home-content container">
+        <section id="home-content" class="home-content container">
 
             <div class="row" >
 
@@ -326,10 +326,121 @@
     </section>
 
 
-    <!-- Customer p-->
+    <!-- Customer page -->
+
+    <section id="customer-content" class="container">
+
+        <div class="row">
+            <div class="card cus-card col-10 col-sm-10   col-md-6 col-lg-6 col-xl-6 col-xxl-6"  >
+
+                <h5 class="card-header">New Customer</h5>
+
+                <div class="card-body">
+                    <h5 class="card-title">Customer info</h5>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label for="customer-id" class="form-label">Customer ID</label>
+                            <input type="text" class="form-control" id="customer-id" placeholder="Enter customer's mobile number">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="customer-name" class="form-label">Customer Name</label>
+                            <input type="text" class="form-control" id="customer-name" placeholder="Enter customer's name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="customer-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="customer-email" aria-describedby="emailHelp" placeholder="Enter customer's email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="customer-address" class="form-label">Customer Address</label>
+                            <textarea class="form-control" placeholder="Enter customer's address" id="customer-address" style="height: 100px"></textarea>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-warning">Save</button>
+                            <button type="button" class="btn btn-primary">Clear</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <div id="div-search" class="card cus-card col-10 col-sm-10 col-md-6 col-lg-4 col-xl-4 col-xxl-4" >
+
+                <h5 class="card-header">Customer Details</h5>
+
+                <div class="card-body">
+                    <h5 class="card-title">Search Customer</h5>
+
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="cus-id-search" placeholder="Enter customer's  mobile/name">
+                        </div>
+
+                        <div class="text-end">
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#customerModal">Search</button>
+                            <button type="button" class="btn btn-primary">clear</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div id="div-customer-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+
+                <h5 class="card-header">Customers</h5>
+
+                <div class="card-body">
+                    <section class="table-view">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email address</th>
+                                <th scope="col">Address</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Mark</td>
+                                <td>Mark@gmail.com</td>
+                                <td>London</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>Jacob</td>
+                                <td>Jacob@gmail.com</td>
+                                <td>Los Angeles</td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>Larry</td>
+                                <td>Larry@gmail.com</td>
+                                <td>Pearth</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
 
 
     <!-- Modals -->
+
+
+    <!-- Modals for home page -->
 
     <!-- Modal for View orders -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -386,7 +497,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Modal for Customer list-->
     <div class="modal fade" id="customerList" tabindex="-1" aria-labelledby="customer-list" aria-hidden="true">
@@ -537,6 +647,67 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modals for customer page -->
+
+    <!-- Modal for Search customer-->
+    <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="customerModal-label">Customer Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <section>
+
+                        <div class="card cus-card"  >
+
+                            <h5 class="card-header">New Customer</h5>
+
+                            <div class="card-body">
+                                <h5 class="card-title">Customer info</h5>
+
+                                <form>
+
+                                    <div class="mb-3">
+                                        <label for="customer-id" class="form-label">Customer ID</label>
+                                        <input type="text" class="form-control" id="cus-id-search-modal" placeholder="Customer's mobile number">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="customer-name" class="form-label">Customer Name</label>
+                                        <input type="text" class="form-control" id="cus-name-search-modal" placeholder="Customer's name">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="customer-email" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="cus-email-search-modal" aria-describedby="emailHelp" placeholder="Customer's email">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="customer-address" class="form-label">Customer Address</label>
+                                        <textarea class="form-control" placeholder="Customer's address" id="cus-address-search-modal" style="height: 100px"></textarea>
+                                    </div>
+                                </form>
+
+                                <div class="text-end">
+                                    <button type="button" class="btn btn-primary">Update</button>
+                                    <button type="button" class="btn btn-primary">Delete</button>
+                                    <button type="button" class="btn btn-primary">Clear</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="modal-footer">
+
                 </div>
             </div>
         </div>

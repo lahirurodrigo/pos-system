@@ -93,23 +93,23 @@
                     <form>
 
                         <div class="mb-3">
-                            <label for="cus-id" class="form-label">Customer ID</label>
-                            <input type="text" class="form-control" id="cus-id" placeholder="Enter customer's mobile number">
+                            <label for="customer-id" class="form-label">Customer ID</label>
+                            <input type="text" class="form-control" id="customer-id" placeholder="Enter customer's mobile number">
                         </div>
 
                         <div class="mb-3">
-                            <label for="cus-name" class="form-label">Customer Name</label>
-                            <input type="text" class="form-control" id="cus-name" placeholder="Enter customer's name">
+                            <label for="customer-name" class="form-label">Customer Name</label>
+                            <input type="text" class="form-control" id="customer-name" placeholder="Enter customer's name">
                         </div>
 
                         <div class="mb-3">
-                            <label for="cus-email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="cus-email" aria-describedby="emailHelp" placeholder="Enter customer's email">
+                            <label for="customer-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="customer-email" aria-describedby="emailHelp" placeholder="Enter customer's email">
                         </div>
 
                         <div class="mb-3">
-                            <label for="cus-address" class="form-label">Customer Address</label>
-                            <textarea class="form-control" placeholder="Enter customer's address" id="cus-address" style="height: 100px"></textarea>
+                            <label for="customer-address" class="form-label">Customer Address</label>
+                            <textarea class="form-control" placeholder="Enter customer's address" id="customer-address" style="height: 100px"></textarea>
                         </div>
 
                         <div class="text-end">
@@ -135,7 +135,7 @@
                         </div>
 
                         <div class="text-end">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Search</button>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#customerModal">Search</button>
                             <button type="button" class="btn btn-primary">clear</button>
                         </div>
                     </form>
@@ -143,7 +143,7 @@
                 </div>
             </div>
 
-            <div id="div-cus-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
+            <div id="div-customer-table" class="card cus-card col-8 col-sm-8 col-md-12 col-lg-12 col-xl-12 col-xxl-12" >
 
                 <h5 class="card-header">Customers</h5>
 
@@ -190,7 +190,7 @@
 
 
     <!-- Modal for Search customer-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -210,22 +210,22 @@
                                 <form>
 
                                     <div class="mb-3">
-                                        <label for="cus-id" class="form-label">Customer ID</label>
+                                        <label for="customer-id" class="form-label">Customer ID</label>
                                         <input type="text" class="form-control" id="cus-id-search-modal" placeholder="Customer's mobile number">
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="cus-name" class="form-label">Customer Name</label>
+                                        <label for="customer-name" class="form-label">Customer Name</label>
                                         <input type="text" class="form-control" id="cus-name-search-modal" placeholder="Customer's name">
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="cus-email" class="form-label">Email address</label>
+                                        <label for="customer-email" class="form-label">Email address</label>
                                         <input type="email" class="form-control" id="cus-email-search-modal" aria-describedby="emailHelp" placeholder="Customer's email">
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="cus-address" class="form-label">Customer Address</label>
+                                        <label for="customer-address" class="form-label">Customer Address</label>
                                         <textarea class="form-control" placeholder="Customer's address" id="cus-address-search-modal" style="height: 100px"></textarea>
                                     </div>
                                 </form>
