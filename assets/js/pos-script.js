@@ -40,6 +40,7 @@ $("#orders-link").eq(0).on('click', () => {
     $('#home-content').css({display: 'none'});
 });
 
+
 $("#home-link").eq(0).on('click', () => {
     replaceStyleSheet('../styles/ordersStyle.css');
     $('#home-content').css({display: 'block'});
@@ -47,4 +48,10 @@ $("#home-link").eq(0).on('click', () => {
     $('#item-content').css({display: 'none'});
     $('#customer-content').css({display: 'none'});
 
+});
+
+$("#logout-button").eq(0).on('click', () => {
+    replaceStyleSheet('../styles/loginStyle.css');
+    $('#home').css({display: 'none'});
+    $('#login').css({display: 'block'});
 });
