@@ -1,3 +1,16 @@
+window.addEventListener("load", function() {
+    // Your code to execute when the entire page has finished loading
+    console.log("Page is fully loaded!");
+    replaceStyleSheet('../styles/loginStyle.css');
+
+    $('#home').css({display: 'none'});
+    $('#home-content').css({display: 'none'});
+    $('#login').css({display: 'block'});
+    $('#customer-content').css({display: 'none'});
+    $('#item-content').css({display: 'none'});
+    $('#order-content').css({display: 'none'});
+});
+
 function replaceStyleSheet(stylesheetURL) {
 
     $('#page-style-sheet').remove();
@@ -10,6 +23,7 @@ $('#home').css({display: 'none'});
 $("#login-button").eq(0).on('click', () => {
     replaceStyleSheet('../styles/homeStyle.css');
     $('#home').css({display: 'block'});
+    $('#home-content').css({display: 'block'});
     $('#login').css({display: 'none'});
     $('#customer-content').css({display: 'none'});
     $('#item-content').css({display: 'none'});
@@ -53,5 +67,9 @@ $("#home-link").eq(0).on('click', () => {
 $("#logout-button").eq(0).on('click', () => {
     replaceStyleSheet('../styles/loginStyle.css');
     $('#home').css({display: 'none'});
+    $('#home-content').css({display: 'none'});
     $('#login').css({display: 'block'});
+    $('#customer-content').css({display: 'none'});
+    $('#item-content').css({display: 'none'});
+    $('#order-content').css({display: 'none'});
 });
