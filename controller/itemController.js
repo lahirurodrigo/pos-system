@@ -2,6 +2,8 @@ import {ItemModel} from '/model/ItemModel.js'
 import {items} from '/db/db.js'
 
 
+var searchItemIndex = undefined;
+
 // to generate next item code
 function getNextItemCode(items, prefix = 'I', padding = 3) {
 
@@ -12,7 +14,7 @@ function getNextItemCode(items, prefix = 'I', padding = 3) {
     }
 
     //taking numeric parts of the item code and save it to a new array
-    const numericCodes = items.map(itemModel => parseInt(itemModel._code.slice(1), 10));
+    const numericCodes = items.map(itemModel => parseInt(itemModel.code.slice(1), 10));
 
     const maxCode = Math.max(...numericCodes);
 
@@ -109,13 +111,39 @@ function loadItemTable() {
 
     items.map(item => {
         var record = `<tr>
-           <td class="item-code-value">${item._code}</td>
-           <td class="item-name-value">${item._name}</td>
-           <td class="item-uniPric-value">${item._unitPrice}</td>
-           <td class="item-qty">${item._quantity}</td>
+           <td class="item-code-value">${item.code}</td>
+           <td class="item-name-value">${item.name}</td>
+           <td class="item-uniPric-value">${item.unitPrice}</td>
+           <td class="item-qty">${item.quantity}</td>
        </tr>`;
 
         $("#item-table-body").append(record);
 
     });
 }
+
+$("#item-search").eq(0).on('click', () => {
+
+    $(document).ready(function() {
+        let searchItemCode = $("#item-id-search").val();
+
+        items.map((item, index) => {
+            if (item.code === searchItemCode ) {
+                $("#itm-code-search-modal").val(item.code);
+                $("#itm-name-search-modal").val(item.name);
+                $("#itm-uni-price-search-modal").val(item.unitPrice);
+                $("#itm-qty-search-modal").val(item.quantity);
+
+                $('#itemModal').modal('show');
+            }
+
+            searchItemIndex = index;
+        });
+    });
+
+
+
+    $("#reset-item-search").click();
+
+});
+
