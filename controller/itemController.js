@@ -122,6 +122,9 @@ function loadItemTable() {
     });
 }
 
+
+// search item
+
 $("#item-search").eq(0).on('click', () => {
 
     $(document).ready(function() {
@@ -141,9 +144,52 @@ $("#item-search").eq(0).on('click', () => {
         });
     });
 
-
-
-    $("#reset-item-search").click();
-
 });
+
+
+// reset add item page
+
+$("#item-save-clear").eq(0).on('click', () => {
+    $('#item-form')[0].reset();
+    const nextCode = getNextItemCode(items);
+    document.getElementById('item-id').value = nextCode;
+});
+
+
+// reset modal fields
+
+$("#item-modal-clear").eq(0).on('click', () => {
+    $('#item-modal-form')[0].reset();
+});
+
+$("#reset-item-search").eq(0).on('click', () => {
+    $('#item-search-form')[0].reset();
+});
+
+
+$("#item-delete").eq(0).on('click', () => {
+
+    items.splice(searchItemIndex, 1);
+
+    loadItemTable();
+    const nextCode = getNextItemCode(items);
+    document.getElementById('item-id').value = nextCode;
+
+    $('#item-modal-form')[0].reset();
+});
+
+$("#item-update").eq(0).on('click', () => {
+
+    let itemObj = items[searchItemIndex];
+
+    itemObj.code = $("#itm-code-search-modal").val();
+    itemObj.name = $("#itm-name-search-modal").val();
+    itemObj.unitPrice = $("#itm-uni-price-search-modal").val();
+    itemObj.quantity = $("#itm-qty-search-modal").val();
+
+    loadItemTable();
+    $('#item-modal-clear').click();
+});
+
+
 

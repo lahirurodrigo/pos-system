@@ -469,8 +469,8 @@
                         </div>
 
                         <div class="text-end">
-                            <button id="item-save" type="button" class="btn btn-warning">Save</button>
-                            <button id="item-save-clear" type="button" class="btn btn-primary">Clear</button>
+                            <button id="item-save" type="button" class="btn btn-success">Save</button>
+                            <button id="item-save-clear" type="button" class="btn btn-secondary">Clear</button>
                         </div>
 
                     </form>
@@ -486,14 +486,14 @@
                 <div class="card-body">
                     <h5 class="card-title">Search Item</h5>
 
-                    <form>
+                    <form id="item-search-form">
                         <div class="mb-3">
                             <input type="text" class="form-control" id="item-id-search" placeholder="Enter item code/name">
                         </div>
 
                         <div class="text-end">
                             <button id="item-search" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#itemModal">Search</button>
-                            <button id="reset-item-search" type="button" class="btn btn-primary">clear</button>
+                            <button id="reset-item-search" type="button" class="btn btn-secondary">clear</button>
                         </div>
                     </form>
 
@@ -991,7 +991,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Item info</h5>
 
-                                <form>
+                                <form id="item-modal-form">
 
                                     <div class="mb-3">
                                         <label for="itm-code-search-modal" class="form-label">Code</label>
@@ -1015,9 +1015,9 @@
                                 </form>
 
                                 <div class="text-end">
-                                    <button type="button" class="btn btn-primary">Update</button>
-                                    <button type="button" class="btn btn-primary">Delete</button>
-                                    <button type="button" class="btn btn-primary">Clear</button>
+                                    <button id="item-update" type="button" class="btn btn-primary">Update</button>
+                                    <button id="item-delete" type="button" class="btn btn-danger">Delete</button>
+                                    <button id="item-modal-clear" type="button" class="btn btn-secondary">Clear</button>
                                 </div>
                             </div>
                         </div>
