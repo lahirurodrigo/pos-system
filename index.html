@@ -337,7 +337,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Customer info</h5>
 
-                    <form>
+                    <form id="customer-form">
 
                         <div class="mb-3">
                             <label for="customer-id" class="form-label">Customer ID</label>
@@ -360,8 +360,8 @@
                         </div>
 
                         <div class="text-end">
-                            <button type="submit" class="btn btn-warning">Save</button>
-                            <button type="button" class="btn btn-primary">Clear</button>
+                            <button id="customer-save" type="button" class="btn btn-warning">Save</button>
+                            <button id="customer-save-clear" type="button" class="btn btn-primary">Clear</button>
                         </div>
 
                     </form>
@@ -382,8 +382,8 @@
                         </div>
 
                         <div class="text-end">
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#customerModal">Search</button>
-                            <button type="button" class="btn btn-primary">clear</button>
+                            <button id="customer-search" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#customerModal">Search</button>
+                            <button id="customer-search-clear" type="button" class="btn btn-primary">clear</button>
                         </div>
                     </form>
 
@@ -405,25 +405,7 @@
                                 <th scope="col">Address</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <th>1</th>
-                                <td>Mark</td>
-                                <td>Mark@gmail.com</td>
-                                <td>London</td>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <td>Jacob</td>
-                                <td>Jacob@gmail.com</td>
-                                <td>Los Angeles</td>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <td>Larry</td>
-                                <td>Larry@gmail.com</td>
-                                <td>Pearth</td>
-                            </tr>
+                            <tbody id="customer-table-body">
                             </tbody>
                         </table>
                     </section>
@@ -954,9 +936,9 @@
                                 </form>
 
                                 <div class="text-end">
-                                    <button type="button" class="btn btn-primary">Update</button>
-                                    <button type="button" class="btn btn-primary">Delete</button>
-                                    <button type="button" class="btn btn-primary">Clear</button>
+                                    <button id="customer-update" type="button" class="btn btn-primary">Update</button>
+                                    <button id="customer-delete" type="button" class="btn btn-primary">Delete</button>
+                                    <button id="customer-modal-clear" type="button" class="btn btn-primary">Clear</button>
                                 </div>
                             </div>
                         </div>
@@ -1038,6 +1020,7 @@
 
     <script src="assets/js/pos-script.js"></script>
     <script type="module" src="controller/itemController.js"></script>
+    <script type="module" src="controller/customerController.js"></script>
 
 </body>
 </html>

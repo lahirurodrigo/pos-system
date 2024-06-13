@@ -1,8 +1,8 @@
 export class CustomerModel{
-    constructor(id,name,tel,address) {
+    constructor(id,name,email,address) {
         this._id = id;
         this._name = name;
-        this._tel = tel;
+        this._email = email;
         this._address = address;
     }
 
@@ -23,12 +23,12 @@ export class CustomerModel{
         this._name = value;
     }
 
-    get tel() {
-        return this._tel;
+    get email() {
+        return this._email;
     }
 
-    set tel(value) {
-        this._tel = value;
+    set email(value) {
+        this._email = value;
     }
 
     get address() {
