@@ -116,5 +116,6 @@ function loadItemTable() {
        </tr>`;
 
         $("#item-table-body").append(record);
+
     });
 }
