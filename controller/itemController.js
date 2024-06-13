@@ -21,9 +21,12 @@ function getNextItemCode(items, prefix = 'I', padding = 3) {
     return `${prefix}${nextCode.toString().padStart(padding, '0')}`;
 }
 
+// next order id generate and set to the text field
 const nextCode = getNextItemCode(items);
 document.getElementById('item-id').value = nextCode;
 
+
+// save button action
 $("#item-save").eq(0).on('click', () => {
     var code = $('#item-id').val();
     var name = $('#item-name').val();
@@ -38,57 +41,80 @@ $("#item-save").eq(0).on('click', () => {
 
     saveItem(new ItemModel(code,name,unitPrice,qty));
 
-    console.log("aiyoo");
     const nextCode = getNextItemCode(items);
     document.getElementById('item-id').value = nextCode;
 
+    loadItemTable();
+
 });
 
-
+// validation
 function validateItemId(itemId) {
     if (!itemId.match("[I]\\d{3,}")) {
         $('#item-id').css("border", "2px solid red");
         return false;
     } else {
-        $('#item-id').css("border", "2px solid #92F646");
+        //$('#item-id').css("border", "2px solid #92F646");
         return true;
     }
 }
 
+// validation
 function validateItemName(itemName) {
     if (!itemName.match("^[A-Z][a-zA-Z]{2,}$")) {
         $('#item-name').css("border", "2px solid red");
         return false;
     } else {
-        $('#item-name').css("border", "2px solid #92F646");
+        //$('#item-name').css("border", "2px solid #92F646");
         return true;
     }
 }
 
+// validation
 function validateItemPrice(itemPrice) {
     if (isNaN(itemPrice) || itemPrice <= 0) {
         $('#item-uni-price').css("border", "2px solid red");
         return false;
     } else {
-        $('#item-uni-price').css("border", "2px solid #92F646");
+        //$('#item-uni-price').css("border", "2px solid #92F646");
         return true;
     }
 }
 
+// validation
 function validateItemQuantity(itemQty) {
     if (isNaN(itemQty) || itemQty <= 0) {
         $('#item-qty').css("border", "2px solid red");
         return false;
     } else {
-        $('#item-qty').css("border", "2px solid #92F646");
+        //$('#item-qty').css("border", "2px solid #92F646");
         return true;
     }
 }
 
+// save item to array
 function saveItem(item) {
 
     items.push(item);
 
     $('#item-form')[0].reset();
     alert('Item saved successfully!');
+}
+
+
+// load values to the table
+
+function loadItemTable() {
+    $("#item-table-body").empty();
+
+    items.map(item => {
+        var record = `<tr>
+           <td class="item-code-value">${item._code}</td>
+           <td class="item-name-value">${item._name}</td>
+           <td class="item-uniPric-value">${item._unitPrice}</td>
+           <td class="item-qty">${item._quantity}</td>
+       </tr>`;
+
+        $("#item-table-body").append(record);
+    });
 }
