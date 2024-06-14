@@ -1,4 +1,4 @@
-import {PlaceOrderModel} from '/model/OrderModel.js'
+import {OrderModel} from '/model/OrderModel.js'
 import { items } from '/db/db.js';
 
 
@@ -30,7 +30,15 @@ $("#orders-link").on('click', () => {
 $itemCodesSelect.on('change', function() {
     var selectedCode = $(this).val();
 
-    console.log("Selected item code:", selectedCode);
+    items.forEach(function(item) {
+        if (item.code === selectedCode){
+            $("#order-itm-name").val(item.name);
+            $("#order-itm-price").val(item.unitPrice);
+            $("#itm-qty").val(item.unitPrice);
+        }
+    });
+
+
 
 
 });
