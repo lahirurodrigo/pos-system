@@ -99,21 +99,19 @@ $("#customer-search").eq(0).on('click', () => {
 
 // reset add item page
 
-$("#item-save-clear").eq(0).on('click', () => {
-    $('#item-form')[0].reset();
-    const nextCode = getNextItemCode(items);
-    document.getElementById('item-id').value = nextCode;
+$("#customer-save-clear").eq(0).on('click', () => {
+    $('#customer-form')[0].reset();
 });
 
 
 // reset modal fields
 
-$("#item-modal-clear").eq(0).on('click', () => {
-    $('#item-modal-form')[0].reset();
+$("#customer-modal-clear").eq(0).on('click', () => {
+    $('#customer-modal-form')[0].reset();
 });
 
-$("#reset-item-search").eq(0).on('click', () => {
-    $('#item-search-form')[0].reset();
+$("#customer-search-clear").eq(0).on('click', () => {
+    $('#customer-search-form')[0].reset();
 });
 
 
