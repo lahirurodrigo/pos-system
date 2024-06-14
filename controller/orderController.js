@@ -1,8 +1,9 @@
 import {OrderModel} from '/model/OrderModel.js'
-import { items } from '/db/db.js';
+import { items, customers } from '/db/db.js';
 
 
 var $itemCodesSelect = $('#input-item-code');
+var $customerIdsSelect = $('#input-cus-id');
 
 // load item codes
 function loadItemCodes() {
@@ -16,16 +17,6 @@ function loadItemCodes() {
     $itemCodesSelect.val('');
 }
 
-
-$("#add-item-order").eq(0).on('click', () => {
-    console.log(items.length);
-
-});
-
-$("#orders-link").on('click', () => {
-    loadItemCodes();
-});
-
 // giving an action for item selection
 $itemCodesSelect.on('change', function() {
     var selectedCode = $(this).val();
@@ -38,7 +29,43 @@ $itemCodesSelect.on('change', function() {
         }
     });
 
+});
 
 
+// loading customer ids
+function loadCustomerIds() {
+    $customerIdsSelect.empty();
 
+    customers.forEach(function(customer) {
+        console.log("load method")
+        $customerIdsSelect.append($('<option></option>').val(customer.id).text(customer.id));
+    });
+
+    $customerIdsSelect.val('');
+}
+
+// giving an action for customer selection
+$customerIdsSelect.on('change', function() {
+    var selectedCode = $(this).val();
+
+    customers.forEach(function(customer) {
+        if (customer.id === selectedCode){
+            $("#order-cus-name").val(customer.name);
+            $("#order-cus-address").val(customer.address);
+            $("#order-cus-email").val(customer.email);
+        }
+    });
+
+});
+
+
+$("#add-item-order").eq(0).on('click', () => {
+
+});
+
+
+// calling codes loading methods
+$("#orders-link").on('click', () => {
+    loadItemCodes();
+    loadCustomerIds()
 });
