@@ -581,7 +581,12 @@
 
                         <div class="col-md-6">
                             <label for="itm-qty" class="form-label">Qty on hand</label>
-                            <input type="text" class="form-control" id="itm-qty">
+                            <label type="text" class="form-control" id="itm-qty"></label>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="itm-buy-qty" class="form-label">Qty</label>
+                            <input type="text" class="form-control" id="itm-buy-qty">
                         </div>
 
                         <div class="col-12 text-end">
@@ -656,7 +661,7 @@
                                 <th scope="col">Item Total</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="cart-table-body">
 
                             </tbody>
                         </table>
