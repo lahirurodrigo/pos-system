@@ -520,7 +520,7 @@
 
                 <div class="card-body">
 
-                    <form class="row g-3">
+                    <form id="form-cus-details" class="row g-3">
                         <div class="col-md-6">
                             <label for="order-id" class="form-label">Order ID</label>
                             <input type="text" class="form-control" id="order-id">
@@ -561,7 +561,7 @@
 
                 <div class="card-body">
 
-                    <form class="row g-3">
+                    <form id="form-item-details" class="row g-3">
 
                         <div class="col-md-6">
                             <label for="input-item-code" class="form-label">Item Code</label>
@@ -603,7 +603,7 @@
 
                 <div class="card-body">
 
-                    <form class="row g-3">
+                    <form id="form-transaction-details" class="row g-3">
 
                         <div class="row g-3 align-items-center ">
                             <div class="col-auto">
@@ -630,16 +630,21 @@
 
                         <div class="col-md-6">
                             <label for="discount" class="form-label">Discount</label>
-                            <input type="text" class="form-control" id="discount">
+                            <select id="discount" class="form-select">
+                                <option id="zero-per" value="0">0%</option>
+                                <option id="five-per" value="5">5%</option>
+                                <option id="ten-per" value="10">10%</option>
+                            </select>
                         </div>
 
                         <div class="col-md-6">
-                            <label for="balance" class="form-label">Qty on hand</label>
+                            <label for="balance" class="form-label">Change</label>
                             <input type="text" class="form-control" id="balance">
                         </div>
 
                         <div class="col-12 text-center">
-                            <button type="button" class="btn btn-primary">Purchase</button>
+                            <button id="cancel-order" type="button" class="btn btn-danger">Cancel</button>
+                            <button id="purchase" type="button" class="btn btn-primary">Purchase</button>
                         </div>
                     </form>
 
@@ -657,7 +662,7 @@
                             <tr>
                                 <th scope="col">Item Code</th>
                                 <th scope="col">Item Name</th>
-                                <th scope="col">Item Price</th>
+                                <th scope="col">Quantity</th>
                                 <th scope="col">Item Total</th>
                             </tr>
                             </thead>

@@ -5,6 +5,8 @@ import { items, customers, orders } from '/db/db.js';
 var $itemCodesSelect = $('#input-item-code');
 var $customerIdsSelect = $('#input-cus-id');
 var cart = [];
+var total = 0;
+var subtotal = 0;
 
 // load item codes
 function loadItemCodes() {
@@ -60,7 +62,7 @@ $customerIdsSelect.on('change', function() {
 });
 
 // generate order id
-function getNextOrderId(items, prefix = 'O', padding = 3) {
+function getNextOrderId(orders, prefix = 'O', padding = 3) {
 
     // if there are no items in items array
     if (orders.length === 0) {
@@ -100,17 +102,76 @@ function loadCartTable() {
     });
 }
 
+function clearForms(){
+    $('#form-cus-details')[0].reset();
+    $('#form-item-details')[0].reset();
+    $('#form-transaction-details')[0].reset();
+    $("#cart-table-body").empty();
+    $itemCodesSelect.val('');
+    $customerIdsSelect.val('');
+    $("#itm-qty").text('');
+    $('#order-id').val(getNextOrderId(orders));
+
+}
+
+
+// Function to disable the customer form
+function disableCustomerForm() {
+    $('#form-cus-details :input').prop('disabled', true);
+}
+
+// Function to enable the customer form
+function enableCustomerForm() {
+    $('#form-cus-details :input').prop('disabled', false);
+}
+
+
+
+// add item button action
 $("#add-item-order").eq(0).on('click', () => {
     let itemCode = $itemCodesSelect.val();
-    if(itemCode === null) {
-        alert('select a item first');
+    let cusCode = $customerIdsSelect.val();
+
+    if(cusCode === null || cusCode === ''){
+        alert('select a customer first');
+        return;
+    }
+
+    if(itemCode === null || itemCode === '') {
+        alert('select an item');
     }else {
         items.forEach(function(item) {
             if (itemCode === item.code){
-                var cartItem = item;
+                let cartItem = { ...item };
+                cartItem.code = item.code;
+                cartItem.name = item.name;
+
+                //in here cartItem.quantity represents the total amount for the item
                 cartItem.quantity = $('#itm-buy-qty').val() * item.unitPrice;
+
+                // in here i save buying quantity in unit price
+                cartItem.unitPrice = $('#itm-buy-qty').val();
                 cart.push(cartItem);
+
+                subtotal += cartItem.quantity;
+                $('#subtotal').val(subtotal);
+
+
+                let totalForItem = cartItem.quantity;
+                let discountRate = parseFloat($('#discount').val());
+
+                let discountedTotalItem = totalForItem - (cartItem.quantity * discountRate / 100);
+                total += discountedTotalItem;
+                $('#total').val(total);
+
+                cartItem.quantity = discountedTotalItem;
+                console.log("price" + cartItem.quantity);
+
                 loadCartTable();
+                disableCustomerForm();
+                $('#itm-buy-qty').val('');
+
+
             }
         });
 
@@ -119,8 +180,47 @@ $("#add-item-order").eq(0).on('click', () => {
 });
 
 
+// purchase button action
+$("#purchase").eq(0).on('click', () => {
+
+    var oId = $('#order-id').val();
+    var cusId = $('#input-cus-id').val();
+    var date = $('#datepicker').val();
+
+
+    cart.forEach(function(cartItem) {
+         var uniPrice = undefined;
+        items.forEach(function(item) {
+            if (item.code === cartItem.code){
+                item.quantity -= cartItem.unitPrice;
+                uniPrice = item.unitPrice;
+            }
+        })
+
+        // in here cartItem.unitPrice is quantity of item bought and cartItem.quantity is discounted total for items
+
+        orders.push(
+            new OrderModel(oId, cusId, date, cartItem.code, cartItem.name, uniPrice, cartItem.unitPrice, cartItem.quantity)
+        );
+    });
+
+    alert('Order placed successfully');
+    enableCustomerForm();
+    clearForms();
+
+    $('#order-id').val(getNextOrderId(orders));
+});
+
+
+$("#cancel-order").eq(0).on('click', () => {
+    clearForms();
+    $('#order-id').val(getNextOrderId(orders));
+    enableCustomerForm();
+});
+
 // calling codes loading methods
 $("#orders-link").on('click', () => {
     loadItemCodes();
-    loadCustomerIds()
+    loadCustomerIds();
+    $('#order-id').val(getNextOrderId(orders));
 });

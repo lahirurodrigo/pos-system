@@ -1,5 +1,5 @@
 import {ItemModel} from '/model/ItemModel.js'
-import {items} from '/db/db.js'
+import {items, orders} from '/db/db.js'
 
 
 var searchItemIndex = undefined;
@@ -191,5 +191,8 @@ $("#item-update").eq(0).on('click', () => {
     $('#item-modal-clear').click();
 });
 
+$("#item-link").on('click', () => {
+    loadItemTable();
+});
 
 
