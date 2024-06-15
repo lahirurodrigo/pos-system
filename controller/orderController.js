@@ -146,8 +146,10 @@ $("#add-item-order").eq(0).on('click', () => {
                 cartItem.code = item.code;
                 cartItem.name = item.name;
 
+
                 //in here cartItem.quantity represents the total amount for the item
                 cartItem.quantity = $('#itm-buy-qty').val() * item.unitPrice;
+                console.log("cart-total: "+cartItem.quantity);
 
                 // in here i save buying quantity in unit price
                 cartItem.unitPrice = $('#itm-buy-qty').val();
@@ -183,9 +185,9 @@ $("#add-item-order").eq(0).on('click', () => {
 // purchase button action
 $("#purchase").eq(0).on('click', () => {
 
-    var oId = $('#order-id').val();
-    var cusId = $('#input-cus-id').val();
-    var date = $('#datepicker').val();
+    let oId = $('#order-id').val();
+    let cusId = $('#input-cus-id').val();
+    let date = $('#datepicker').val();
 
 
     cart.forEach(function(cartItem) {
@@ -205,8 +207,11 @@ $("#purchase").eq(0).on('click', () => {
     });
 
     alert('Order placed successfully');
+    cart = [];
     enableCustomerForm();
     clearForms();
+    total = 0;
+    subtotal = 0;
 
     $('#order-id').val(getNextOrderId(orders));
 });

@@ -212,7 +212,7 @@
                                 </div>
 
                                 <div class="col-12 text-end">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View Orders</button>
+                                    <button id="view-orders" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View Orders</button>
                                 </div>
                             </form>
 
@@ -240,11 +240,11 @@
 
                                 <div class="col-md-6">
                                     <label for="cus-name" class="form-label">Name or ID</label>
-                                    <input type="text" class="form-control" id="cus-name">
+                                    <input id="cus-name" type="text" class="form-control">
                                 </div>
 
                                 <div class="text-end">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customerHistory">View History</button>
+                                    <button id="cus-history-view" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customerHistory">View History</button>
                                 </div>
                             </form>
 
@@ -707,25 +707,7 @@
                                         <th scope="col">Amount</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th>O1</th>
-                                        <td>C1</td>
-                                        <td>2024/03/02</td>
-                                        <td>10000</td>
-                                    </tr>
-                                    <tr>
-                                        <th>O2</th>
-                                        <td>C2</td>
-                                        <td>2024/03/27</td>
-                                        <td>20000</td>
-                                    </tr>
-                                    <tr>
-                                        <th>O3</th>
-                                        <td>C3</td>
-                                        <td>2024/03/30</td>
-                                        <td>20000</td>
-                                    </tr>
+                                    <tbody id="home-orders-body">
                                     </tbody>
                                 </table>
                             </section>
@@ -818,12 +800,7 @@
                                         <th scope="col">Date</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th>O1</th>
-                                        <td>10000</td>
-                                        <td>2024/03/02</td>
-                                    </tr>
+                                    <tbody id="cus-history-body">
                                     </tbody>
                                 </table>
                             </section>
@@ -1024,6 +1001,7 @@
     <script type="module" src="controller/itemController.js"></script>
     <script type="module" src="controller/customerController.js"></script>
     <script type="module" src="controller/orderController.js"></script>
+    <script type="module" src="controller/homeController.js"></script>
 
 </body>
 </html>
